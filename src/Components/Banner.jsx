@@ -6,15 +6,15 @@ import img3 from "../assets/03.png";
 
 const Banner = () => {
   return (
-    <div  className="mt-5">
+    <div>
       <Carousel className="text-center" autoPlay={true} infiniteLoop={true}>
-        <div className="w-full h-[640px] text-center">
+        <div className="w-full h-[693px] text-center">
           <img src={img1} alt="burger" className="w-full h-full object-cover" />
         </div>
-        <div className="w-full h-[640px] text-center">
+        <div className="w-full h-[693px] text-center">
           <img src={img2} alt="pizza" className="w-full h-full object-cover" />
         </div>
-        <div className="w-full h-[640px] text-center">
+        <div className="w-full h-[693px] text-center">
           <img src={img3} alt="chicken " className="w-full h-full object-cover" />
         </div>
       </Carousel>
