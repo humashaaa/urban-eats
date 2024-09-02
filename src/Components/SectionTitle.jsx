@@ -9,4 +9,6 @@ const SectionTitle = ({title, subTitle}) => {
     );
 };
 
+// prop-types
+
 export default SectionTitle;
