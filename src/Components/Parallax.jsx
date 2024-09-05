@@ -1,13 +1,13 @@
-import img1 from "../assets/featured.jpg";
+import img1 from "../assets/parallax.webp";
 import './Parallax.css'
 const Parallax = () => {
   return (
-    <div className="mt-12 featuredImage p-24 bg-fixed">
-      <div className="flex gap-5 items-center justify-center text-white bg-slate-600 bg-opacity-65">
-        <img className="h-[300px] w-[500px]" src={img1} alt="" />
-        <div className="w-96">
-          <h1>Where can i get?</h1>
-          <p>
+    <div className="mt-12 featuredImage p-28  bg-fixed ">
+      <div className="flex gap-10 items-center justify-center p-10 rounded-lg  text-white bg-white bg-opacity-20">
+        <img className="h-[300px] w-[500px] rounded-lg" src={img1} alt="" />
+        <div className="w-96 space-y-4">
+          <h1 className="uppercase font-bold text-xl">Where can i get?</h1>
+          <p className="text-white font-medium">
             where every meal is a celebration of taste and hospitality. Our
             chefs use only the freshest ingredients to craft delicious dishes
             that will delight your senses. Whether you're here for a casual

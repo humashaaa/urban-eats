@@ -6,39 +6,35 @@ import Parallax from "../Components/Parallax";
 import SectionTitle from "../Components/SectionTitle";
 import Swipper from "../Components/Swipper";
 import Testimonials from "../Components/Testimonials";
+import Banner2 from "../Components/Banner2";
 
 const Home = () => {
   return (
     <div>
-       <Helmet>
-                <title>UrbanEats</title>
-             </Helmet>
-
-
-        {/* banner */}
+      <Helmet>
+        <title>UrbanEats</title>
+      </Helmet>
+      {/* banner */}
       <Banner></Banner>
+      {/* 2nd banner */}
+      <Banner2></Banner2>
 
-      {/* section title */}
       <SectionTitle
-        title={"open at 11 am"}
-        subTitle={"you can try on different thing"}
+        subTitle={"International Dishes"}
+        title={"Our Iconic Menu"}
       ></SectionTitle>
 
-      {/* swipper slider */}
-
+      
+      ;{/* swipper slider */}
       <div className="mt-10">
         <Swipper></Swipper>
       </div>
-
       {/* menu */}
       <Menu></Menu>
-
       {/* featured */}
       <Featured></Featured>
-
       {/* parallax */}
       <Parallax></Parallax>
-
       {/* testimonials */}
       <Testimonials></Testimonials>
     </div>

@@ -9,6 +9,7 @@ import About from "./Pages/About.jsx";
 import Contact from "./Pages/Contact.jsx";
 import Ourmenu from "./Pages/Ourmenu.jsx";
 import { HelmetProvider } from "react-helmet-async";
+import Login from "./Pages/Login.jsx";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,14 @@ const router = createBrowserRouter([
         element: <Contact></Contact>,
       },
     ],
+  },
+  {
+    path: '/login',
+    element: <Login></Login>
+  },
+  {
+    path: '/register',
+    element: <Login></Login>
   },
 ]);
 
