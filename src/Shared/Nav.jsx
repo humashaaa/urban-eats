@@ -7,7 +7,7 @@ const Nav = () => {
   <NavLink to='/contact-us'>Contact Us</NavLink>
   <NavLink to='/about'>About Us</NavLink>
   <NavLink to='/login'>Sign in</NavLink>
-  <NavLink to='/register'>Sing up</NavLink>
+  <NavLink to='/register'>Sign up</NavLink>
   </>
     return (
         <div>

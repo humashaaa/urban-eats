@@ -1,22 +1,24 @@
-.featuredImage {
-    background-image: url('../assets/parallax.webp');
+.contact-banner {
+    background-image: url('../../assets/contact.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
+    height: 300px;
+    width: 1400px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.featuredImage::after {
+.contact-banner::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); 
+    background-color: rgba(0, 0, 0, 0.55); 
     z-index: 1; 
 }
-.featuredImage div {
+.contact-banner h1 {
     z-index: 2; 
 }
