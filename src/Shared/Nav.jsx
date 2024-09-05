@@ -4,8 +4,8 @@ const Nav = () => {
   const navBar = <>
   <NavLink to='/'>Home</NavLink>
   <NavLink to='/menu'>Our Menu</NavLink>
-  <NavLink to='/contact-us'>Contact Us</NavLink>
   <NavLink to='/about'>About Us</NavLink>
+  <NavLink to='/contact-us'>Contact Us</NavLink>
   <NavLink to='/login'>Sign in</NavLink>
   <NavLink to='/register'>Sign up</NavLink>
   </>

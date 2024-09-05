@@ -5,12 +5,12 @@ import "./index.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./Pages/Home.jsx";
-import About from "./Pages/About.jsx";
 import Ourmenu from "./Pages/Ourmenu.jsx";
 import { HelmetProvider } from "react-helmet-async";
 import Login from "./Pages/Login.jsx";
 import Register from "./Pages/Register.jsx";
 import Contact from "./Pages/Contact/Contact.jsx";
+import About from "./Pages/About/About.jsx";
 
 const router = createBrowserRouter([
   {
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About></About>,
+        element: <About></About>
       },
       {
         path: "/contact-us",

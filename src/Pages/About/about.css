@@ -1,0 +1,51 @@
+.about{
+    background-image: url('../../assets/aboutus.avif');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 350px;
+    width: 1400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65); 
+    z-index: 1; 
+}
+.about h1 {
+    z-index: 2; 
+}
+
+.aboutImg {
+    background-image: url('../../assets//chef-cooking.avif');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    width: 100%;
+}
+.aboutImg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 0, 0, 0.4);  */
+    background-color: rgba(255, 255, 255, 0.1);
+
+    z-index: 1; 
+}
+.aboutImg div {
+    z-index: 2; 
+}
