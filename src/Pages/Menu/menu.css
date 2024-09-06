@@ -1,0 +1,25 @@
+.menu-banner{
+    /* background-image: url('../../assets/menu-banner.jpg'); */
+    background-image: url('../../assets/Menu-Short.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 350px;
+    width: 1400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu-banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    z-index: 1; 
+}
+.menu-banner h1 {
+    z-index: 2; 
+}

@@ -1,16 +1,15 @@
-import SectionTitle from "./SectionTitle";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-// Import Swiper styles
+import { Pagination, Autoplay, FreeMode, } from "swiper/modules";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import { useEffect, useState } from "react";
-import { Rating } from '@smastrom/react-rating'
+import { Rating } from "@smastrom/react-rating";
 
-import '@smastrom/react-rating/style.css'
+import "@smastrom/react-rating/style.css";
 const Testimonials = () => {
   const [reviews, setReviews] = useState([]);
-  const [rating, setRating] = useState(0)
+  const [rating, setRating] = useState(0);
 
   useEffect(() => {
     fetch("review.json")
@@ -23,33 +22,42 @@ const Testimonials = () => {
 
   return (
     <div>
-      <SectionTitle
-        title={"testimonials"}
-        subTitle={"What our clients say"}
-      ></SectionTitle>
-
-      {/* testimonial */}
-     
-            
-        
-
-      <div>
-         <Swiper
-           
-           navigation={true}
-           modules={[Navigation]}
-           className="mySwiper"
-         >
-        {reviews.map((review) => <SwiperSlide  key={review._id}>
-              <div className="m-24">
-              <Rating style={{ maxWidth: 250 }} value={review.rating} onChange={setRating} />
-                <p>{review.name}</p>
-                <p>{review.details}</p>
+      {/* testimonial */}    
+      <div className="mb-16">
+        <Swiper
+          slidesPerView={4}
+          centeredSlides={true}
+          spaceBetween={90}
+          freeMode={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination, Autoplay, FreeMode]}
+          className="mySwiper "
+        >         
+          {reviews.map((review) => (
+            <SwiperSlide key={review._id} >
+              <div className="">
+                <div className=" card bg-base-100 w-96 h-72 shadow-lg">
+                  <div className="card-body">
+                    <Rating
+                      style={{ maxWidth: 250 }}
+                      value={review.rating}
+                      onChange={setRating}
+                    />
+                    <h2 className="card-title">{review.name}</h2>
+                    <p>{review.details}</p>                  
+                  </div>
+                </div>
               </div>
             </SwiperSlide>
-          
-        )}
-          </Swiper>
+          ))} 
+        </Swiper>
+     
       </div>
     </div>
   );
