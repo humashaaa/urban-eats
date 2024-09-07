@@ -1,23 +1,27 @@
 
 const Menucard = ({item}) => {
-    const {name, recipe, image, category, price, _id} = item
+    const {name, description, image, category, price, _id, keywords} = item
     console.log(item);
     return (
         <div>
-            <div className="card bg-base-100 w-96 shadow-xl ">
+            <div className="w-96 ">
   <div className="flex">
-  <figure>
+  {/* <figure>
     <img
     className='rounded-r-3xl rounded-b-3xl'
       src={image}
       alt="menu" />
-  </figure>
-  <div className="card-body">
-    <h2 className="card-title">{name}</h2>
-    <p>{recipe}</p>
-    <div className="flex items-center justify-between">
-        <p>category : {category}</p>
-        <p>Price : {price}</p>
+  </figure> */}
+  <div className="p-3 w-96 h-36 space-y-2">
+    <div className="flex justify-between items-center">
+    <h2 className="flex-1 text-xl font-medium">{name}</h2>
+    <p className="font-bold text-[18px]">${price}</p>
+    </div>
+
+    
+    <div className="flex items-start justify-between">
+    <p className="flex-1 text-gray-600 ">{description}</p>
+    <p className=" p-1 text-white text-[11px] text-center bg-red-500 uppercase">{keywords}</p>
     </div>
     
   </div>
