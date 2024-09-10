@@ -1,127 +1,113 @@
 import { useEffect, useState } from "react";
-import img1 from "../../assets/pasta-ragu.jpg";
-import img2 from "../../assets/grilled-fish.jpg";
-import img3 from "../../assets/ham.jpg";
-import img4 from "../../assets/lobstar.jpg";
+
 import "./menu.css";
-import MenuTabs from "./MenuTabs";
+// import MenuTabs from "./MenuTabs";
+import Menucard from "../../Components/Menucard";
+import Cover from "./Cover";
+import dessertImg from '../../assets/dessert.jpg'
+import dinnerImg from '../../assets/steak.jpg'
+import lunchImg from '../../assets/istockphoto-1428412216-612x612.jpg'
+import brunchImg from '../../assets/Screenshot 2024-09-09 212719.png'
 const Menu = () => {
-  
+  const [menu, setMenu] = useState([]);
+  useEffect(() => {
+    fetch("menu.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setMenu(data);
+        console.log(data);
+      });
+  }, []);
+
+  const brunch = menu.filter((item) => item.category === "brunch");
+  const dessertItem = menu.filter((item) => item.category === "dessert");
+  const lunchItem = menu.filter((item) => item.category === "lunch");
+  const dinnerItem = menu.filter((item) => item.category === "dinner");
 
   return (
     <div>
       {/* banner */}
       <div className="menu-banner mx-auto">
-        <h1 className="font-bold text-6xl uppercase text-white absolute top-1/2 left-[33rem]">
+        <h1 className="font-bold text-7xl uppercase text-white absolute top-1/2 left-[33rem]">
           our menu
         </h1>
       </div>
 
       <div className="flex gap-4 mt-16 mb-24 items-center justify-center">
-        <div className="branch">
-          <h1 className="text-3xl bg-[rgba(0,0,0,0.4)] p-7 rounded-md text-white uppercase  top-1/2 left-1/2 font-semibold">
+        <div className="branch transition transform duration-500 hover:scale-105 ease-in-out">
+          <h1 className="text-3xl bg-[rgba(0,0,0,0.4)]  p-7 rounded-md text-white uppercase  top-1/2 left-1/2 font-semibold">
             Brunch
           </h1>
         </div>
-        <div className="lunch">
+        <div className="lunch transition transform duration-500 hover:scale-105 ease-in-out">
           <h1 className="text-3xl bg-[rgba(0,0,0,0.4)] p-7 rounded-md text-white uppercase  top-1/2 left-1/2 font-semibold">
             Lunch
           </h1>
         </div>
-        <div className="dinner">
+        <div className="dinner transition transform duration-500 hover:scale-105 ease-in-out">
           <h1 className="text-3xl bg-[rgba(0,0,0,0.4)] p-7 rounded-md text-white uppercase  top-1/2 left-1/2 font-semibold">
             dinner
           </h1>
         </div>
       </div>
 
-      {/* chef's special */}
-      <section>
-        <h1 className="font-bold text-5xl text-gray-700 text-center mt-11 uppercase">
-          Chef's Specials
-        </h1>
-        <div className="flex items-center justify-center gap-8 mt-20">
-          {/* 1st */}
-          <div>
-            <div className="flex justify-center items-center gap-5 mb-10">
-              <img className="w-44 h-52 rounded-sm" src={img1} alt="" />
-              <div>
-                <h1 className="mb-2 text-xl font-semibold">
-                  PASTA WITH RAGU'-------------------------
-                  <span className="text-red-500">$25</span>
-                </h1>
-                <p className="text-gray-500">Meat / Pasta / Cheese / Onion</p>
-                <p className="w-96 mt-3 mb-4 text-gray-600">
-                  Pasta with Ragù is a classic Italian dish topped with a rich,
-                  slow-cooked meat and tomato sauce. Perfectly hearty and
-                  flavorful!
-                </p>
-                <button className="btn btn-primary">buy now</button>
-              </div>
-            </div>
-            {/* 2nd dish */}
-            <div className="flex justify-center items-center gap-5">
-              <img className="w-44 h-52 rounded-sm" src={img2} alt="" />
-              <div>
-                <h1 className="mb-2 text-xl font-semibold">
-                  GRILLED FISH--------------------------------
-                  <span className="text-red-500">$20</span>
-                </h1>
-                <p className="text-gray-500">
-                  Sea bream / Oregano / Extra Virgin Olive Oil
-                </p>
-                <p className="w-96 mt-3 mb-4 text-gray-600">
-                  Grilled Fish is a light and flavorful dish, perfectly seasoned
-                  fish fillets, grilled to smoky perfection. Fresh, simple, and
-                  delicious!
-                </p>
-                <button className="btn btn-primary">buy now</button>
-              </div>
-            </div>
-          </div>
+      <h1 className="font-bold text-5xl mb-28 text-gray-700 text-center mt-28 uppercase">
+        Delight in Every Course
+      </h1>
+{/* brunch */}
 
-          {/* 2nd */}
-          <div>
-            <div className="flex justify-center items-center gap-5 mb-10">
-              <img className="w-44 h-52 rounded-sm" src={img3} alt="" />
-              <div>
-                <h1 className="mb-2 text-xl font-semibold">
-                  SMOKED HAM-------------------------------
-                  <span className="text-red-500">$18</span>
-                </h1>
-                <p className="text-gray-500">Ham / Cheese / Butter</p>
-                <p className="w-96 mt-3 mb-4 text-gray-600">
-                  Smoked Ham is a savory, cured meat that’s slow-smoked to
-                  enhance its rich, smoky flavor, perfect for sandwiches or as a
-                  main dish.
-                </p>
-                <button className="btn btn-primary">buy now</button>
-              </div>
-            </div>
-            {/* 4th dish */}
-            <div className="flex justify-center items-center gap-5">
-              <img className="w-44 h-52 rounded-sm" src={img4} alt="" />
-              <div>
-                <h1 className="mb-2 text-xl font-semibold">
-                  Truffle-Lobster Risotto----------------------
-                  <span className="text-red-500">$27</span>
-                </h1>
-                <p className="text-gray-500">
-                  Lobster/ fresh truffles / Arborio rice
-                </p>
-                <p className="w-96 mt-3 mb-4 text-gray-600">
-                  Truffle-Infused Lobster Risotto is an indulgent dish combining
-                  the delicate sweetness of lobster with the earthy richness of
-                  truffle. 
-                </p>
-                <button className="btn btn-primary">buy now</button>
-              </div>
-            </div>
-          </div>
+<div className="branch-banner bg-fixed">
+          <h1 className="text-6xl bg-[rgba(0,0,0,0.4)] p-8 rounded-md text-white uppercase  top-1/2 left-1/2 font-bold">
+            Brunch
+          </h1>
         </div>
-      </section>
+      <div className=" px-20 mb-32 mt-16 ">
+        <div className="grid grid-cols-3 gap-4 bg-white  mb-28 ">
+          {brunch.map((item) => (
+            <Menucard key={item._id} item={item}></Menucard>
+          ))}
+        </div>
+      </div>
 
-      <MenuTabs></MenuTabs>
+{/* lunch */}
+<div className="lunch-banner bg-fixed">
+          <h1 className="text-6xl bg-[rgba(0,0,0,0.4)] p-8 rounded-md text-white uppercase  top-1/2 left-1/2 font-bold">
+            Lunch
+          </h1>
+        </div>
+      <div className=" px-20 mb-32 mt-16 ">
+        <div className="grid grid-cols-3 gap-4 bg-white  mb-28 ">
+          {lunchItem.map((item) => (
+            <Menucard key={item._id} item={item}></Menucard>
+          ))}
+        </div>
+      </div>
+{/* dinner */}
+<div className="dinner-banner bg-fixed">
+          <h1 className="text-6xl bg-[rgba(0,0,0,0.4)] p-8 rounded-md text-white uppercase  top-1/2 left-1/2 font-bold">
+            Dinner
+          </h1>
+        </div>
+      <div className=" px-20 mb-32 mt-16 ">
+        <div className="grid grid-cols-3 gap-4 bg-white  mb-28 ">
+          {dinnerItem.map((item) => (
+            <Menucard key={item._id} item={item}></Menucard>
+          ))}
+        </div>
+      </div>
+{/* dessert */}
+<div className="dessert-banner bg-fixed">
+          <h1 className="text-6xl bg-[rgba(0,0,0,0.4)] p-8 rounded-md text-white uppercase  top-1/2 left-1/2 font-bold">
+            Dessert
+          </h1>
+        </div>
+      <div className=" px-20 mb-32 mt-16 ">
+        <div className="grid grid-cols-3 gap-4 bg-white  mb-28 ">
+          {dessertItem.map((item) => (
+            <Menucard key={item._id} item={item}></Menucard>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

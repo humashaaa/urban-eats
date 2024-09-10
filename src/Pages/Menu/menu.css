@@ -1,5 +1,5 @@
 .menu-banner{
-    background-image: url('../../assets/Menu-Short.jpg');
+    background-image: url('../../assets/ourmenu.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -16,7 +16,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); 
+    background-color: rgba(0, 0, 0, 0.75); 
     z-index: 1; 
 }
 .menu-banner h1 {
@@ -97,5 +97,137 @@
     z-index: 1; 
 }
 .dinner h1 {
+    z-index: 2; 
+}
+
+/* dessert */
+.dessertImage {
+    background-image: url('../../assets/oaty-pancakes_sw_recipe.webp');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    width: 100%;
+}
+.dessertImage::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    z-index: 1; 
+}
+.dessertImage div {
+    z-index: 2; 
+}
+
+
+/* brunch parallax */
+
+.branch-banner {
+    background-image: url('../../assets/luxury-food-servic.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 100%;
+}
+.branch-banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65); 
+    z-index: 1; 
+}
+.branch-banner h1 {
+    z-index: 2; 
+}
+/* lunch parallax */
+
+.lunch-banner {
+    background-image: url('../../assets/istockphoto-1428412216-612x612.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 100%;
+}
+.lunch-banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1; 
+}
+.lunch-banner h1 {
+    z-index: 2; 
+}
+/* dinner parallax */
+
+.dinner-banner {
+    background-image: url('../../assets/steak.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 100%;
+}
+.dinner-banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1; 
+}
+.dinner-banner h1 {
+    z-index: 2; 
+}
+/* dessert parallax */
+
+.dessert-banner {
+    background-image: url('../../assets/dessert.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 100%;
+}
+.dessert-banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45); 
+    z-index: 1; 
+}
+.dessert-banner h1 {
     z-index: 2; 
 }
