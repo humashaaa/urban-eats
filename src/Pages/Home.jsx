@@ -1,14 +1,12 @@
 import { Helmet } from "react-helmet-async";
-import Banner from "../Components/Banner";
 import Featured from "../Components/Featured";
 import Parallax from "../Components/Parallax";
 import SectionTitle from "../Components/SectionTitle";
 import Swipper from "../Components/Swipper";
 import Banner2 from "../Components/Banner2";
-import img1 from "../assets/pasta-ragu.jpg";
-import img2 from "../assets/grilled-fish.jpg";
-import img3 from "../assets/ham.jpg";
-import img4 from "../assets/lobstar.jpg";
+
+import Banner from "../Components/Banner/Banner";
+import Chefspecial from "../Components/Chefspecial";
 const Home = () => {
   return (
     <div>
@@ -36,10 +34,22 @@ const Home = () => {
         <h1 className="font-bold text-5xl text-gray-700 text-center mt-11 uppercase">
           Chef's Specials
         </h1>
+<Chefspecial></Chefspecial>
+
+
+
+
+
+
+
+
+
+
+
         <div className="flex items-center justify-center gap-8 mt-20">
           {/* 1st */}
           <div>
-            <div className="flex justify-center items-center gap-5 mb-10">
+            {/* <div className="flex justify-center items-center gap-5 mb-10">
               <img className="w-44 h-52 rounded-sm" src={img1} alt="" />
               <div>
                 <h1 className="mb-2 text-xl font-semibold">
@@ -54,9 +64,9 @@ const Home = () => {
                 </p>
                 <button className="btn btn-primary">buy now</button>
               </div>
-            </div>
+            </div> */}
             {/* 2nd dish */}
-            <div className="flex justify-center items-center gap-5">
+            {/* <div className="flex justify-center items-center gap-5">
               <img className="w-44 h-52 rounded-sm" src={img2} alt="" />
               <div>
                 <h1 className="mb-2 text-xl font-semibold">
@@ -73,12 +83,12 @@ const Home = () => {
                 </p>
                 <button className="btn btn-primary">buy now</button>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* 2nd */}
           <div>
-            <div className="flex justify-center items-center gap-5 mb-10">
+            {/* <div className="flex justify-center items-center gap-5 mb-10">
               <img className="w-44 h-52 rounded-sm" src={img3} alt="" />
               <div>
                 <h1 className="mb-2 text-xl font-semibold">
@@ -93,9 +103,9 @@ const Home = () => {
                 </p>
                 <button className="btn btn-primary">buy now</button>
               </div>
-            </div>
+            </div> */}
             {/* 4th dish */}
-            <div className="flex justify-center items-center gap-5">
+            {/* <div className="flex justify-center items-center gap-5">
               <img className="w-44 h-52 rounded-sm" src={img4} alt="" />
               <div>
                 <h1 className="mb-2 text-xl font-semibold">
@@ -112,7 +122,7 @@ const Home = () => {
                 </p>
                 <button className="btn btn-primary">buy now</button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
