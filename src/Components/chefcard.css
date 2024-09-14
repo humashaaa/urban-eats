@@ -1,0 +1,16 @@
+
+
+/* Hide scrollbar for the carousel */
+.wrapper .carousal {
+    overflow-x: scroll;
+    cursor: pointer;
+
+    overflow-y: hidden; /* Prevent vertical scrolling if needed */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.wrapper .carousal::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
+

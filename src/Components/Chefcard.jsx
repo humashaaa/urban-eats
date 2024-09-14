@@ -1,11 +1,12 @@
 
 const Chefcard = ({img, name, price, description}) => {
+    // hover:scale-105 transition duration-300 ease-in-out
     return (
         <div >
            <div className=" w-96">
         <div className="relative h-96 w-96">
           <img
-            className="h-96 w-96 rounded-lg hover:scale-105 transition duration-300 ease-in-out"
+            className="h-96 w-96 rounded-lg "
             src={img}
             alt=""
           />
