@@ -1,11 +1,10 @@
 import { Helmet } from "react-helmet-async";
 import Featured from "../Components/Featured";
 import Parallax from "../Components/Parallax";
-import SectionTitle from "../Components/SectionTitle";
-import Banner2 from "../Components/Banner2";
 
 import Banner from "../Components/Banner/Banner";
 import Chefspecial from "../Components/Chefspecial";
+import Homebanner2 from "../Components/Banner/Homebanner/Homebanner2";
 const Home = () => {
   return (
     <div>
@@ -15,12 +14,10 @@ const Home = () => {
       {/* banner */}
       <Banner></Banner>
       {/* 2nd banner */}
-      <Banner2></Banner2>
+      <Homebanner2></Homebanner2>
 
-      <SectionTitle
-        subTitle={"International Dishes"}
-        title={"Our Iconic Menu"}
-      ></SectionTitle>
+      {/* <Banner2></Banner2> */}
+
 
      
        {/* chef's special */}

@@ -1,4 +1,3 @@
-import SectionTitle from "./SectionTitle";
 import img1 from "../assets/Green White Modern Simple Restaurant Special Offer Instagram Post (1).png";
 import img2 from "../assets/Orange Black Minimalist Happy Thanksgiving Instagram Post.png";
 import img3 from "../assets/Green and Cream Flat & Minimalist menu today Price List Instagram Post.png";

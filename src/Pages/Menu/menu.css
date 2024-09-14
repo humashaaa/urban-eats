@@ -23,7 +23,7 @@
     z-index: 2; 
 }
 
-/* branch */
+/* branch
 .branch{
     background-image: url('../../assets/branch.webp');
     background-size: cover;
@@ -98,7 +98,7 @@
 }
 .dinner h1 {
     z-index: 2; 
-}
+} */
 
 /* dessert */
 .dessertImage {
