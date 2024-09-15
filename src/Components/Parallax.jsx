@@ -2,7 +2,7 @@ import img1 from "../assets/parallax.webp";
 import './Parallax.css'
 const Parallax = () => {
   return (
-    <div className="mt-12 featuredImage p-28  bg-fixed ">
+    <div className="mt-36 featuredImage p-28  bg-fixed ">
       <div className="flex gap-10 items-center justify-center p-10 rounded-lg  text-white  ">
         <img className="h-[400px] w-[600px] rounded-lg" src={img1} alt="" />
         <div className="w-96 space-y-4">
