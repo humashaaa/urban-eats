@@ -7,8 +7,8 @@ const Booktable = () => {
       </h1>
       {/* book section */}
       <section className="book-table ">
-        <div className="bg-gray-200  w-[34rem]">
-          <div className=" flex-col lg:flex-row-reverse">
+        <div className="bg-gray-200  w-[34rem] ">
+          <div className=" flex-col lg:flex-row-reverse ">
             <div className="card p-12 shrink-0 w-full  shadow-2xl bg-base-100">
               <form className="space-y-4">
                 {/* 1st row */}
