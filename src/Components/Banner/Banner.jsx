@@ -14,6 +14,7 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Navigation } from "swiper/modules";
+import { Link } from "react-router-dom";
 const Banner = () => {
   return (
     <div>
@@ -48,9 +49,16 @@ const Banner = () => {
             </div>
             {/* button */}
             <div className="mt-4">
-              <button className="btn btn-primary uppercase">
-                veiw full menu
-              </button>
+            <Link
+            to="/menu"
+            className="relative inline-block mt-2 px-4 py-2 font-medium group"
+          >
+            <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-[#A8563F] group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+            <span className="absolute inset-0 w-full h-full bg-[#E2725B] border-2 border-[#E2725B] group-hover:bg-[#E2725B]"></span>
+            <span className="relative text-white group-hover:text-white">
+              VIEW FULL MENU
+            </span>
+          </Link>
             </div>
           </div>
         </SwiperSlide>
@@ -70,9 +78,16 @@ const Banner = () => {
             </div>
             {/* button */}
             <div className="mt-4">
-              <button className="btn btn-primary uppercase">
-                book a table
-              </button>
+            <a
+            href="#book-a-table"
+            className="relative inline-block mt-2 px-4 py-2 font-medium group"
+          >
+            <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-[#A8563F] group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+            <span className="absolute inset-0 w-full h-full bg-[#E2725B] border-2 border-[#E2725B] group-hover:bg-[#E2725B]"></span>
+            <span className="relative text-white group-hover:text-white">
+              BOOK A TABLE
+            </span>
+          </a>
             </div>
           </div>
         </SwiperSlide>

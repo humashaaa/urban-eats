@@ -2,9 +2,9 @@ const Menucard = ({ item }) => {
   const { name, description, image, category, price, _id, keywords } = item;
   return (
     <div className="relative group">
-      <div className="w-96 ">
+      <div className="w-96  bg-[#fcf9f9] h-44 ">
         <div className="flex">
-          <div className="p-3 w-96 h-36 space-y-2">
+          <div className="p-5 w-96  space-y-2">
             <div className="flex justify-between items-center">
               <h2 className="flex-1 text-xl font-medium group-hover:text-gray-500">
                 {name}
@@ -12,16 +12,18 @@ const Menucard = ({ item }) => {
               <p className="font-bold text-[18px] text-[#333333]">${price}</p>
             </div>
 
-            <div className="flex items-start justify-between">
+            <div className="flex flex-col items-start gap-4 ">
               <p className="flex-1 text-gray-600 group-hover:text-gray-500">
                 {description}
               </p>
-              <p className="p-1 text-white text-[11px] text-center bg-red-500 uppercase">
-                {keywords}
+              <p className="p-2 text-white text-[12px] text-center bg-red-500 uppercase">
+                add to cart
               </p>
             </div>
           </div>
         </div>
+        {/* <button className="btn btn-primary">ADD TO CART</button> */}
+
       </div>
 
       {/* Image Reveal with Scale on Hover */}

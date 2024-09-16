@@ -1,5 +1,6 @@
+import { Link } from "react-router-dom";
 import img1 from "../assets/parallax.webp";
-import './Parallax.css'
+import "./Parallax.css";
 const Parallax = () => {
   return (
     <div className="mt-36 featuredImage p-28  bg-fixed ">
@@ -14,7 +15,16 @@ const Parallax = () => {
             lunch, a family dinner, or a special occasion, we offer a warm and
             friendly atmosphere to make your dining experience unforgettable.
           </p>
-          <button className="btn btn-outline btn-success">Order Now</button>
+          <a
+          href="book-a-table"
+            className="relative inline-block mt-2 px-4 py-2 font-medium group"
+          >
+            <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-[#A8563F] group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+            <span className="absolute inset-0 w-full h-full bg-[#E2725B] border-2 border-[#E2725B] group-hover:bg-[#E2725B]"></span>
+            <span className="relative text-white group-hover:text-white">
+              BOOK A TABLE
+            </span>
+          </a>
         </div>
       </div>
     </div>

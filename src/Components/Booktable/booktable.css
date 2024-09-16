@@ -3,12 +3,12 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  height: 550px;
+  height: 650px;
   width: 100%;
   display: flex;
   justify-content: flex-start; /* Aligns the content to the left */
   align-items: center; /* Vertically center the form */
-  padding-left: 4rem; /* Adjust the left padding as per your design */
+  padding-left: 4rem; /* Adjusted the left padding as per design */
 }
 .book-table::after {
   content: "";

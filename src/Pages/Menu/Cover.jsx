@@ -1,3 +1,4 @@
+
 const Cover = ({img, title}) => {
   return (
     <div>
@@ -8,6 +9,7 @@ const Cover = ({img, title}) => {
             `url('${img}')`,
         }}
       >
+       
         <div className="hero-overlay bg-opacity-65"></div>
         <div className="hero-content text-neutral-content text-center">
           <div className="">
