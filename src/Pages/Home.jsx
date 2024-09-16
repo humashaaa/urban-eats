@@ -5,14 +5,20 @@ import Banner from "../Components/Banner/Banner";
 import Chefspecial from "../Components/Chefspecial";
 import Homebanner2 from "../Components/Banner/Homebanner/Homebanner2";
 import Booktable from "../Components/Booktable/Booktable";
+import { useRef } from "react";
 const Home = () => {
+  const bookSectionRef = useRef(null);
+
+  const scrollToSection = () => {
+    bookSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <div>
       <Helmet>
         <title>UrbanEats</title>
       </Helmet>
       {/* banner */}
-      <Banner></Banner>
+      <Banner scrollToSection={scrollToSection}></Banner>
       {/* 2nd banner */}
       <Homebanner2></Homebanner2>
 
@@ -25,10 +31,10 @@ const Home = () => {
       </section>
      
       {/* parallax */}
-      <Parallax></Parallax>
+      <Parallax scrollToSection={scrollToSection}></Parallax>
 
       {/* book a table */}
-      <Booktable></Booktable>
+      <Booktable sectionRef={bookSectionRef}></Booktable>
     </div>
   );
 };

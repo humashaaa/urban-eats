@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import "./booktable.css";
-const Booktable = () => {
+const Booktable = ({sectionRef}) => {
   return (
     <div>
       <h1 className="font-bold text-5xl text-gray-700 text-center mt-28 mb-20 uppercase">
         reservation
       </h1>
       {/* book section */}
-      <section id="book-a-table" className="book-table ">
+      <section ref={sectionRef} className="book-table ">
         <div className="bg-gray-200  w-[34rem] ">
           <div className=" flex-col lg:flex-row-reverse ">
             <div className="card p-12 shrink-0 w-full  shadow-2xl bg-base-100">

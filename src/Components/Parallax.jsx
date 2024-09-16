@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import img1 from "../assets/parallax.webp";
 import "./Parallax.css";
-const Parallax = () => {
+const Parallax = ({scrollToSection}) => {
   return (
     <div className="mt-36 featuredImage p-28  bg-fixed ">
       <div className="flex gap-10 items-center justify-center p-10 rounded-lg  text-white  ">
@@ -15,8 +15,7 @@ const Parallax = () => {
             lunch, a family dinner, or a special occasion, we offer a warm and
             friendly atmosphere to make your dining experience unforgettable.
           </p>
-          <a
-          href="book-a-table"
+          <button onClick={scrollToSection}
             className="relative inline-block mt-2 px-4 py-2 font-medium group"
           >
             <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-[#A8563F] group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
@@ -24,7 +23,7 @@ const Parallax = () => {
             <span className="relative text-white group-hover:text-white">
               BOOK A TABLE
             </span>
-          </a>
+          </button>
         </div>
       </div>
     </div>

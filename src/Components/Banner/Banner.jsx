@@ -15,7 +15,7 @@ import "swiper/css/navigation";
 // import required modules
 import { Navigation } from "swiper/modules";
 import { Link } from "react-router-dom";
-const Banner = () => {
+const Banner = ({scrollToSection}) => {
   return (
     <div>
       <Swiper
@@ -78,8 +78,7 @@ const Banner = () => {
             </div>
             {/* button */}
             <div className="mt-4">
-            <a
-            href="#book-a-table"
+            <button onClick={scrollToSection}
             className="relative inline-block mt-2 px-4 py-2 font-medium group"
           >
             <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-[#A8563F] group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
@@ -87,7 +86,7 @@ const Banner = () => {
             <span className="relative text-white group-hover:text-white">
               BOOK A TABLE
             </span>
-          </a>
+          </button>
             </div>
           </div>
         </SwiperSlide>
