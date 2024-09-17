@@ -6,11 +6,11 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./Pages/Home.jsx";
 import { HelmetProvider } from "react-helmet-async";
-import Login from "./Pages/Login.jsx";
 import Register from "./Pages/Register.jsx";
 import Contact from "./Pages/Contact/Contact.jsx";
 import About from "./Pages/About/About.jsx";
 import Menu from "./Pages/Menu/Menu.jsx";
+import Login from "./Pages/Login/Login.jsx";
 
 const router = createBrowserRouter([
   {
