@@ -89,11 +89,13 @@ const Booktable = ({sectionRef}) => {
                 </div>
 
                 <div className="flex items-center justify-center ">
-                <Link to='/' className="relative inline-block px-4 py-2 font-medium group">
+                {/* <Link to='/' className="relative inline-block px-4 py-2 font-medium group">
 <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-[#A8563F] group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
-<span className="absolute inset-0 w-full h-full bg-[#E2725B] border-2 border-[#E2725B] group-hover:bg-[#E2725B]"></span>
+<span className="absolute inset-0 w-full h-full bg- border-2 border-[#E2725B] group-hover:bg-[#E2725B]"></span>
 <span className="relative text-white group-hover:text-white">BOOK NOW</span>
-</Link>
+</Link> */}
+<input className="px-8 py-2 rounded-md bg-[#E2725B] text-white font-bold transition duration-200 hover:bg-white hover:text-[#E2725B] border-2 border-transparent hover:border-[#E2725B]" type="submit" value="BOOK NOW" />
+
                 </div>
               </form>
             </div>
