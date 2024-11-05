@@ -6,8 +6,7 @@ const Nav = () => {
   <NavLink to='/menu'>Our Menu</NavLink>
   <NavLink to='/about'>About Us</NavLink>
   <NavLink to='/contact-us'>Contact Us</NavLink>
-  <NavLink to='/login'>Sign in</NavLink>
-  <NavLink to='/register'>Sign up</NavLink>
+  
   </>
     return (
         <div>
@@ -44,7 +43,9 @@ const Nav = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+  <button className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-[#E2725B] border border-[#E2725B] rounded-md shadow-sm hover:[#ec6d53]focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ec6d53]" >
+Login
+</button>
   </div>
 </div> 
         </div>

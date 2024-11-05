@@ -33,16 +33,17 @@ const router = createBrowserRouter([
         path: "/contact-us",
         element: <Contact></Contact>,
       },
+      {
+        path: '/register',
+        element: <Register></Register>
+      },
     ],
   },
   {
     path: '/login',
     element: <Login></Login>
   },
-  {
-    path: '/register',
-    element: <Register></Register>
-  },
+ 
 ]);
 
 createRoot(document.getElementById("root")).render(

@@ -1,15 +1,18 @@
 import { Carousel } from "react-responsive-carousel";
 import img1 from "../../assets/Lacuisine_resto.jpg";
 import React, { useRef, useState } from "react";
+// import BannerAnimation from './BannerAnimation'
 import "./banner.css";
 import { Link } from "react-router-dom";
-
 const Banner = ({ scrollToSection }) => {
   return (
     <div>
       <section className="relative home-banner ">
         <div className="absolute mx-auto left-[5rem]">
           <div className=" text-left  ">
+{/* <BannerAnimation></BannerAnimation> */}
+
+
             <h1 className="text-3xl font-extrabold text-white sm:text-5xl">
               Experience the Essence of
               <strong className="block font-extrabold text-[#E2725B]">
