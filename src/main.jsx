@@ -10,6 +10,7 @@ import Contact from "./Pages/Contact/Contact.jsx";
 import About from "./Pages/About/About.jsx";
 import Menu from "./Pages/Menu/Menu.jsx";
 import Login from "./Pages/Login/Login.jsx";
+import AuthProvider from "./AuthProvider/AuthProvider.jsx";
 
 const router = createBrowserRouter([
   {
@@ -22,33 +23,34 @@ const router = createBrowserRouter([
       },
       {
         path: "/menu",
-        element: <Menu></Menu>
+        element: <Menu></Menu>,
       },
       {
         path: "/about",
-        element: <About></About>
+        element: <About></About>,
       },
       {
         path: "/contact-us",
         element: <Contact></Contact>,
       },
       {
-        path: '/register',
+        path: "/register",
         // element: <Register></Register>
       },
     ],
   },
   {
-    path: '/login',
-    element: <Login></Login>
+    path: "/login",
+    element: <Login></Login>,
   },
- 
 ]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <HelmetProvider>
-      <RouterProvider router={router} />
-    </HelmetProvider>
+    <AuthProvider>
+      <HelmetProvider>
+        <RouterProvider router={router} />
+      </HelmetProvider>
+    </AuthProvider>
   </StrictMode>
 );
