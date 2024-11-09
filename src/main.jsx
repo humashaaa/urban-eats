@@ -6,7 +6,6 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./Pages/Home.jsx";
 import { HelmetProvider } from "react-helmet-async";
-import Register from "./Pages/Register.jsx";
 import Contact from "./Pages/Contact/Contact.jsx";
 import About from "./Pages/About/About.jsx";
 import Menu from "./Pages/Menu/Menu.jsx";
@@ -35,7 +34,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/register',
-        element: <Register></Register>
+        // element: <Register></Register>
       },
     ],
   },

@@ -6,7 +6,6 @@ import Chefspecial from "../Components/Chefspecial";
 import Homebanner2 from "../Components/Banner/Homebanner/Homebanner2";
 import Booktable from "../Components/Booktable/Booktable";
 import { useRef } from "react";
-import Register from "./Register";
 const Home = () => {
   const bookSectionRef = useRef(null);
 
@@ -20,7 +19,7 @@ const Home = () => {
       </Helmet>
       {/* banner */}
       <Banner scrollToSection={scrollToSection}></Banner>
-      <Register></Register>
+      
       {/* 2nd banner */}
       <Homebanner2></Homebanner2>
 

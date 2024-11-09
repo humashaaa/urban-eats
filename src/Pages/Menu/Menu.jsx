@@ -55,7 +55,7 @@ const Menu = () => {
         </h1>
       </div>
       <div className="px-20 mb-32 mt-16">
-        <div className="grid grid-cols-3 gap-4 bg-white mb-28">
+        <div className="grid grid-cols-2 gap-4 bg-white mb-28">
           {brunchItem.map((item) => (
             <Menucard key={item._id} item={item} />
           ))}
@@ -69,7 +69,7 @@ const Menu = () => {
         </h1>
       </div>
       <div  className="px-20 mb-32 mt-16">
-        <div  className="grid grid-cols-3 gap-4 bg-white mb-28">
+        <div  className="grid grid-cols-2 gap-4 bg-white mb-28">
           {lunchItem.map((item) => (
             <Menucard key={item._id} item={item} />
           ))}
@@ -83,7 +83,7 @@ const Menu = () => {
         </h1>
       </div>
       <div className="px-20 mb-32 mt-16">
-        <div  className="grid grid-cols-3 gap-4 bg-white mb-28">
+        <div  className="grid grid-cols-2 gap-4 bg-white mb-28">
           {dinnerItem.map((item) => (
             <Menucard key={item._id} item={item} />
           ))}
@@ -97,7 +97,7 @@ const Menu = () => {
         </h1>
       </div>
       <div className="px-20 mb-32 mt-16">
-        <div className="grid grid-cols-3 gap-4 bg-white mb-28">
+        <div className="grid grid-cols-2 gap-4 bg-white mb-28">
           {dessertItem.map((item) => (
             <Menucard key={item._id} item={item} />
           ))}

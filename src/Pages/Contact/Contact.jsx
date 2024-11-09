@@ -154,6 +154,7 @@ const Contact = () => {
           <FaXTwitter />
         </div>
       </div>
+      
 
       {/* map */}
       <div>

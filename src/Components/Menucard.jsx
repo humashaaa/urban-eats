@@ -1,7 +1,12 @@
 const Menucard = ({ item }) => {
   const { name, description, image, category, price, _id, keywords } = item;
   return (
-    <div className="relative group">
+    <div className="flex justify-start items-center gap-1 border-4 border-green-500">
+       <img
+        src={image}
+        alt={name}
+        className="w-[12rem] h-[11rem]"
+      />
       <div className="w-96  bg-[#fcf9f9] h-44 ">
         <div className="flex">
           <div className="p-5 w-96  space-y-2">
@@ -26,12 +31,8 @@ const Menucard = ({ item }) => {
 
       </div>
 
-      {/* Image Reveal with Scale on Hover */}
-      <img
-        src={image}
-        alt={name}
-        className="absolute top-0 right-0 w-28 h-28 rounded-sm object-cover opacity-0 transform group-hover:opacity-100 group-hover:scale-125 transition-all duration-500"
-      />
+      
+     
     </div>
   );
 };
