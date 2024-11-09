@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import img from "../../assets/room-service.png";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { DialogTitle } from "@headlessui/react";
+import { useState } from "react";
 const Login = ({ setIsOpen, isOpen }) => {
+  const [eye, setEye] = useState(false)
   return (
     <div className="flex flex-col justify-center items-center bg-white ">
       <div className=" text-black bg-transparent shadow-none relative h-full w-full font-montserrat">
@@ -40,24 +42,24 @@ const Login = ({ setIsOpen, isOpen }) => {
                 Password
               </label>
               <input
-                // type={eye ? "text" : "password"}
+                type={eye ? "text" : "password"}
                 name="password"
                 id="password"
                 placeholder="Enter your password"
                 required
                 className="mt-2 block w-full md:w-96 px-3 h-11 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#f5816a] focus:border-[#f5816a] "
               />
-              {/* {eye ? (
+              {eye ? (
                   <IoMdEyeOff
                     onClick={() => setEye(!eye)}
-                    className="cursor-pointer text-2xl absolute z-10 top-[30px] right-3"
+                    className="cursor-pointer text-xl absolute z-10 top-[45px] right-3"
                   />
                 ) : (
                   <IoMdEye
                     onClick={() => setEye(!eye)}
-                    className="cursor-pointer text-2xl absolute z-10 top-[30px] right-3"
+                    className="cursor-pointer text-xl absolute z-10 top-[45px] right-3"
                   />
-                )} */}
+                )}
             </div>
 
             {/* {errorText && (

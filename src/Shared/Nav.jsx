@@ -117,7 +117,7 @@ const Nav = () => {
                   {/* Close Icon */}
                   <button
                     onClick={() => setIs2ndOpen(false)}
-                    className="absolute top-16 right-[555px] bg-gray-100  text-gray-500 hover:text-white hover:bg-black hover:bg-opacity-50 p-1 rounded-full transition duration-300 "
+                    className="absolute top-9 right-[546px] bg-gray-100  text-gray-500 hover:text-white hover:bg-black hover:bg-opacity-50 p-1 rounded-full transition duration-300 "
                   >
                     <IoMdClose className="text-2xl " />
                   </button>
