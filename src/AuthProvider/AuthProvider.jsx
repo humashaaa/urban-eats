@@ -1,6 +1,7 @@
-import { auth } from "@/Firebase/Firebase.config";
+import { auth } from "../Firebase/Firebase.config";
 import {
   createUserWithEmailAndPassword,
+  GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
@@ -13,6 +14,7 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const provider = new GoogleAuthProvider();
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -28,7 +30,7 @@ const AuthProvider = ({ children }) => {
   const googleSignIn = () => {
     setLoading(true);
 
-    return signInWithPopup(auth, Provider);
+    return signInWithPopup(auth, provider);
   };
   // log out
   const logOut = () => {
@@ -48,13 +50,14 @@ const AuthProvider = ({ children }) => {
 
   // manage users
   useEffect(() => {
-    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
-        setUser(currentUser);
-        setLoading(false);
-      }
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      console.log("current user", currentUser);
+      setLoading(false);
     });
-    return () => unSubscribe();
+    return () => {
+      return unsubscribe();
+    };
   }, []);
   console.log(user);
 

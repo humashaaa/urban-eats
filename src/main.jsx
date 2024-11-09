@@ -11,6 +11,7 @@ import About from "./Pages/About/About.jsx";
 import Menu from "./Pages/Menu/Menu.jsx";
 import Login from "./Pages/Login/Login.jsx";
 import AuthProvider from "./AuthProvider/AuthProvider.jsx";
+import { Toaster } from "react-hot-toast";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,7 @@ createRoot(document.getElementById("root")).render(
     <AuthProvider>
       <HelmetProvider>
         <RouterProvider router={router} />
+        <Toaster />
       </HelmetProvider>
     </AuthProvider>
   </StrictMode>

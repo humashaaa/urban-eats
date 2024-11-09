@@ -9,9 +9,11 @@ import {
   DialogTitle,
 } from "@headlessui/react";
 import { IoMdClose } from "react-icons/io";
+import useAuth from "../Hooks/useAuth";
 const Nav = () => {
   let [isOpen, setIsOpen] = useState(false);
   let [is2ndOpen, setIs2ndOpen] = useState(false);
+  const { user, logOut } = useAuth();
   const navBar = (
     <>
       <NavLink to="/">Home</NavLink>
@@ -30,7 +32,13 @@ const Nav = () => {
     setIs2ndOpen(false)
 
   }
+  const handleLogOut = () => {
+    logOut()
+        .then(() => { })
+        .catch(error => console.log(error));
+}
 
+ 
   return (
     <div>
       <div className="navbar fixed z-30 bg-opacity-30 bg-black text-white ">
@@ -68,7 +76,14 @@ const Nav = () => {
           </ul>
         </div>
         <div className="navbar-end space-x-3">
-          <button
+         {
+          user? (
+            <>
+            <button onClick={handleLogOut}>LogOut</button>
+            </>
+          ) : (
+<>
+            <button
             onClick={() => setIsOpen(true)}
             className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-[#E2725B] border  border-[#ec6d53] rounded-md shadow-sm hover:[#ec6d53]focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ec6d53]"
           >
@@ -105,7 +120,7 @@ const Nav = () => {
               </div>
             </div>
           </Dialog>
-          {/* register */}
+          
           <Dialog
             open={is2ndOpen}
             onClose={() => setIs2ndOpen(false)}
@@ -142,6 +157,9 @@ const Nav = () => {
           <button className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-[#E2725B] border border-[#E2725B] rounded-md shadow-sm hover:[#ec6d53]focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ec6d53]">
             Book A Table
           </button>
+            </>
+          )
+         }
         </div>
       </div>
     </div>
