@@ -12,6 +12,7 @@ import Menu from "./Pages/Menu/Menu.jsx";
 import Login from "./Pages/Login/Login.jsx";
 import AuthProvider from "./AuthProvider/AuthProvider.jsx";
 import { Toaster } from "react-hot-toast";
+import PrivateRoute from "./Routes/PrivateRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About></About>,
+        element: 
+        // <PrivateRoute>
+          <About></About>
+          // {/* </PrivateRoute> */}
+          ,
       },
       {
         path: "/contact-us",

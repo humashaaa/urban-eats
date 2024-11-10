@@ -4,10 +4,13 @@ import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import { useForm } from "react-hook-form";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const [eye, setEye] = useState(false);
   const navigate = useNavigate();
+  const axiosPublic = useAxiosPublic();
   const { createUser, updateUser, googleSignIn } = useAuth();
   const [user, setUser] = useState(null);
   // console.log(role);
@@ -35,18 +38,17 @@ const Register = () => {
             password,
             name,
             photo,
-            role: "use",
+            role: "user",
           };
 
           console.log(userData);
 
-          //   await  axios.post(`${import.meta.env.VITE_URL}/users`, employeeData).then((res) => {
-          //       if (res.data.insertedId) {
-          //         console.log("employee added");
-          //         toast.success("employee info updated");
-          //         navigate("/dashboard");
-          //       }
-          //     })
+          await axiosPublic.post(`/users`, userData).then((res) => {
+            if (res.data.insertedId) {
+              console.log("user added");
+              toast.success("Signed up successful");
+            }
+          });
         });
       }
 
@@ -73,12 +75,11 @@ const Register = () => {
         role: "user",
       };
       console.log(userInfo);
-      //   axiosSecure.post(`/users`, userInfo)
-      //   .then(res=>{
-      //     console.log(res.data);
-      //     navigate("/dashboard");
-      //   toast.success("Sign in Successfully");
-      //   })
+      axiosPublic.post(`/users`, userInfo).then((res) => {
+        console.log(res.data);
+        navigate("/");
+        toast.success("Sign up Successfully");
+      });
     });
   };
 

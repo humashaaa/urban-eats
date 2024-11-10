@@ -3,9 +3,7 @@
       "target": "ES6", // or "ESNext"
       "module": "commonjs", // You can use "ES6" if you're using ES modules
       "baseUrl": "./",
-      "paths": {
-        "@/*": ["src/*"] // Adjust based on your project structure
-      }
+      
     },
     "exclude": ["node_modules"]
   }

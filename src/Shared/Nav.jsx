@@ -1,6 +1,6 @@
 import Login from "../Pages/Login/Login";
 import Register from '../Pages/Register/Register'
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import {
   Description,
@@ -10,6 +10,7 @@ import {
 } from "@headlessui/react";
 import { IoMdClose } from "react-icons/io";
 import useAuth from "../Hooks/useAuth";
+import NavModal from "./NavModal";
 const Nav = () => {
   let [isOpen, setIsOpen] = useState(false);
   let [is2ndOpen, setIs2ndOpen] = useState(false);
@@ -32,11 +33,9 @@ const Nav = () => {
     setIs2ndOpen(false)
 
   }
-  const handleLogOut = () => {
-    logOut()
-        .then(() => { })
-        .catch(error => console.log(error));
-}
+
+
+ 
 
  
   return (
@@ -79,7 +78,7 @@ const Nav = () => {
          {
           user? (
             <>
-            <button onClick={handleLogOut}>LogOut</button>
+           <NavModal></NavModal>
             </>
           ) : (
 <>
@@ -90,6 +89,7 @@ const Nav = () => {
             Login
           </button>
           <Dialog
+        
             open={isOpen}
             onClose={() => setIsOpen(false)}
             className="relative z-50"

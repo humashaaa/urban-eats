@@ -6,11 +6,12 @@ import { useEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 const Login = ({ setIsOpen, isOpen }) => {
   const [eye, setEye] = useState(false);
   const { user, loading, signIn, googleSignIn } = useAuth();
   const navigate = useNavigate();
-
+  const axiosPublic = useAxiosPublic;
   const {
     register,
     handleSubmit,
@@ -25,8 +26,9 @@ const Login = ({ setIsOpen, isOpen }) => {
       .then((result) => {
         const loggedInUser = result.user;
         console.log(loggedInUser);
-        navigate("/");
         toast.success("Login Successfully");
+        navigate("/");
+        
       })
       .catch((error) => {
         toast.error(error?.message);
