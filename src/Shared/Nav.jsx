@@ -11,16 +11,22 @@ import {
 import { IoMdClose } from "react-icons/io";
 import useAuth from "../Hooks/useAuth";
 import NavModal from "./NavModal";
+import useCart from "../Hooks/useCart";
 const Nav = () => {
   let [isOpen, setIsOpen] = useState(false);
   let [is2ndOpen, setIs2ndOpen] = useState(false);
   const { user, logOut } = useAuth();
+  const [cart] = useCart()
   const navBar = (
     <>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/menu">Our Menu</NavLink>
       <NavLink to="/about">About Us</NavLink>
       <NavLink to="/contact-us">Contact Us</NavLink>
+      <Link to='/dashboard/cart' className="btn">
+ cart
+  <div className="badge">+{cart.length}</div>
+</Link>
     </>
   );
   const handleModal =()=>{
@@ -78,6 +84,8 @@ const Nav = () => {
          {
           user? (
             <>
+           
+
            <NavModal></NavModal>
             </>
           ) : (

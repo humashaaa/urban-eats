@@ -10,7 +10,6 @@ const NavModal = () => {
   };
   return (
     <div>
-      <NavLink>cart</NavLink>
       <NavLink>food history</NavLink>
       <button onClick={handleLogOut}>LogOut</button>
     </div>

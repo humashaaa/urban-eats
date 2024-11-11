@@ -13,6 +13,9 @@ import Login from "./Pages/Login/Login.jsx";
 import AuthProvider from "./AuthProvider/AuthProvider.jsx";
 import { Toaster } from "react-hot-toast";
 import PrivateRoute from "./Routes/PrivateRoute.jsx";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Dashboard from "./Components/Layout/Dashboard.jsx";
+import Cart from "./UserDashboard/Cart.jsx";
 
 const router = createBrowserRouter([
   {
@@ -49,15 +52,30 @@ const router = createBrowserRouter([
     path: "/login",
     element: <Login></Login>,
   },
+  {
+    path : "dashboard",
+    element : <Dashboard></Dashboard>,
+    children : [
+      {
+        path: "cart",
+        element: <Cart></Cart>
+      }
+    ]
+  }
 ]);
+
+const queryClient = new QueryClient();
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+      <QueryClientProvider client={queryClient}>
     <AuthProvider>
       <HelmetProvider>
         <RouterProvider router={router} />
         <Toaster />
       </HelmetProvider>
     </AuthProvider>
+    </QueryClientProvider>
   </StrictMode>
 );
