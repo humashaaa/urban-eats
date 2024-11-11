@@ -1,5 +1,4 @@
 import { Link, useNavigate } from "react-router-dom";
-import img from "../../assets/room-service.png";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { DialogTitle } from "@headlessui/react";
 import { useEffect, useState } from "react";
@@ -7,11 +6,12 @@ import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import img from '../../assets/resturant-login.png'
 const Login = ({ setIsOpen, isOpen }) => {
   const [eye, setEye] = useState(false);
   const { user, loading, signIn, googleSignIn } = useAuth();
   const navigate = useNavigate();
-  const axiosPublic = useAxiosPublic;
+  const axiosPublic = useAxiosPublic();
   const {
     register,
     handleSubmit,
@@ -27,8 +27,7 @@ const Login = ({ setIsOpen, isOpen }) => {
         const loggedInUser = result.user;
         console.log(loggedInUser);
         toast.success("Login Successfully");
-        navigate("/");
-        
+        navigate("/");       
       })
       .catch((error) => {
         toast.error(error?.message);
@@ -59,12 +58,16 @@ const Login = ({ setIsOpen, isOpen }) => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center bg-white ">
-      <div className=" text-black bg-transparent shadow-none relative h-full w-full font-montserrat">
+   <div className=" min-h-screen pt-20">
+     <div className="flex gap-10 mx-auto  shadow-xl w-[60rem] h-[35rem]  justify-center items-center bg-white ">
+<div>
+  <img className="w-96 h-96" src={img} alt="" />
+</div>
+<div className=" text-black bg-transparent  flex flex-col w-[26rem]  relative h-[28rem]  ">
         <div className="bg-white rounded-md  mx-auto ">
-          <DialogTitle className="font-bold text-center mb-4 text-3xl">
+          <div className="font-bold text-center mb-7 text-3xl">
             Login
-          </DialogTitle>
+          </div>
 
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -161,9 +164,18 @@ const Login = ({ setIsOpen, isOpen }) => {
               <span className="font-semibold text-xl">Google</span>
             </button>
           </div>
+          <span className="block text-sm mt-2  text-center">
+                        Don't have an account?{" "}
+                        <Link to="/register"><button
+                          className="text-blue-500 hover:underline cursor-pointer"
+                        >
+                          Register
+                        </button></Link>
+                      </span>
         </div>
       </div>
     </div>
+   </div>
   );
 };
 

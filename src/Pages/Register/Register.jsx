@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { DialogTitle } from "@headlessui/react";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import { useForm } from "react-hook-form";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import toast from "react-hot-toast";
+import img from '../../assets/resturant-login.png'
 
 const Register = () => {
   const [eye, setEye] = useState(false);
@@ -84,12 +85,16 @@ const Register = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center bg-white ">
-      <div className=" text-black bg-transparent shadow-none relative h-full w-full font-montserrat">
+   <div className=" min-h-screen pt-10 ">
+     <div className="flex gap-10 mx-auto  shadow-xl w-[60rem] h-[39rem] pt-10  justify-center items-start bg-white ">
+      <div>
+  <img className="w-96 h-[27rem] pt-16" src={img} alt="" />
+</div>
+      <div className=" text-black  flex flex-col w-[26rem]  relative h-[28rem] bg-transparent ">
         <div className="bg-white rounded-md  mx-auto ">
-          <DialogTitle className="font-bold text-center mb-4 text-3xl">
+          <div className="font-bold text-center mb-4 text-3xl">
             Register
-          </DialogTitle>
+          </div>
 
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -200,9 +205,19 @@ const Register = () => {
               <span className="font-semibold text-xl">Google</span>
             </button>
           </div>
+          <span className="block text-center">
+                        Already have an account?{" "}
+                        <button
+          
+                          className="text-blue-500 cursor-pointer"
+                        >
+                         <Link to='/login'> Login</Link>
+                        </button>
+                      </span>
         </div>
       </div>
     </div>
+   </div>
   );
 };
 
