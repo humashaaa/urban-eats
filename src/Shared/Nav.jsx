@@ -98,7 +98,7 @@ const Nav = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="menu menu-sm text-black  dropdown-content mt-3 z-[50] p-2 shadow bg-blue-50 rounded-box md:w-52 w-20"
+                className="menu menu-sm text-black dropdown-content mt-3 z-[50] p-2 shadow bg-blue-50 rounded-box md:w-52 w-20"
               >
                 <li>
                   <button className="btn btn-sm font-extrabold mb-1  btn-ghost">
@@ -106,7 +106,7 @@ const Nav = () => {
                   </button>
                 </li>
                 <li>
-                  <NavLink className="font-semibold" to="/dashboard">
+                  <NavLink className="font-semibold " to="/dashboard">
                     Dashboard
                   </NavLink>
                 </li>
@@ -119,7 +119,7 @@ const Nav = () => {
                 <li>
                   <button
                     onClick={handleLogOut}
-                    className="btn btn-sm hover:bg-blue-500  bg-blue-400 text-white"
+                    className="btn btn-sm hover:bg-orange-500  bg-orange-500 text-white"
                   >
                     Log out
                   </button>

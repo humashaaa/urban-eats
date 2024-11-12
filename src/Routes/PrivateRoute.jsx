@@ -140,8 +140,7 @@ const toastShownRef = useRef(false); // Use useRef to track if toast was shown
       </div>
     </Dialog>
 
-    {/* Redirect to home */}
-     {/* Redirect to home if modals are not open */}
+   
      {!isOpen && !is2ndOpen && (
             <Navigate to="/" state={{ from: location }} replace />
           )}

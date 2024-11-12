@@ -23,7 +23,6 @@ if(user && user.email){
     name,
     image,
     price
-
   }
 
   axiosPublic.post(`/carts`, cartItem)
