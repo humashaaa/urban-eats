@@ -7,6 +7,8 @@ import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import img from '../../assets/resturant-login.png'
+import { MdKeyboardBackspace } from "react-icons/md";
+import { TbFidgetSpinner } from "react-icons/tb";
 const Login = ({ setIsOpen, isOpen }) => {
   const [eye, setEye] = useState(false);
   const { user, loading, signIn, googleSignIn } = useAuth();
@@ -51,7 +53,7 @@ const Login = ({ setIsOpen, isOpen }) => {
       // axiosSecure.post(`/users`, userInfo)
       // .then(res=>{
       //   console.log(res.data);
-      //   navigate("/");
+        navigate("/");
       // toast.success("Sign in Successfully");
       // })
     });
@@ -117,19 +119,21 @@ const Login = ({ setIsOpen, isOpen }) => {
             </div>
 
             <div className="mt-3">
-              <input
-                type="submit"
-                value="Login"
-                className="h-11 rounded-md w-96 text-xl hover:bg-transparent hover:border-hover:bg-transparent hover:border-[#f5816a] hover:border-2 hover:text-[#f5816a]  text-white bg-[#f5816a]  cursor-pointer"
-              />
+             <button
+             disabled={loading}
+              type="submit"
+                className="h-11 rounded-md w-96 text-xl hover:text-[#f5816a] hover:bg-transparent hover:border-2 hover:border-[#f5816a]   text-white bg-[#f5816a]  cursor-pointer">
+                 {loading ? <div className="flex gap-1  items-center justify-center"><TbFidgetSpinner className="animate-spin" />Login</div> : " Login"}
+                  </button>
             </div>
           </form>
 
           <div className="border border-dashed w-96 mt-6 mb-6"></div>
           <div className="">
             <button
+           
               onClick={handleSocialLogin}
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-md  border border-[#f5816a] border-input  h-12  w-96"
+              className="inline-flex  cursor-pointer items-center justify-center whitespace-nowrap rounded-md  border border-[#f5816a] border-input  h-12  w-96"
               type="submit"
             >
               <span className="mr-2">
@@ -164,7 +168,7 @@ const Login = ({ setIsOpen, isOpen }) => {
               <span className="font-semibold text-xl">Google</span>
             </button>
           </div>
-          <span className="block text-sm mt-2  text-center">
+          <span className="block text-sm mt-4 text-center">
                         Don't have an account?{" "}
                         <Link to="/register"><button
                           className="text-blue-500 hover:underline cursor-pointer"
@@ -172,6 +176,9 @@ const Login = ({ setIsOpen, isOpen }) => {
                           Register
                         </button></Link>
                       </span>
+                      <div className="flex items-center justify-center text-red-600  mt-2">
+                        <Link className="flex items-center gap-1 hover:text-orange-500" to='/'> <MdKeyboardBackspace className="text-xl font-bold" /> Back</Link>
+                      </div>
         </div>
       </div>
     </div>

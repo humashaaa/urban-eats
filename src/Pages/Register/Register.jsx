@@ -7,12 +7,13 @@ import { useForm } from "react-hook-form";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import toast from "react-hot-toast";
 import img from '../../assets/resturant-login.png'
-
+import { MdKeyboardBackspace } from "react-icons/md";
+import { TbFidgetSpinner } from "react-icons/tb";
 const Register = () => {
   const [eye, setEye] = useState(false);
   const navigate = useNavigate();
   const axiosPublic = useAxiosPublic();
-  const { createUser, updateUser, googleSignIn } = useAuth();
+  const { createUser, updateUser, googleSignIn, loading} = useAuth();
   const [user, setUser] = useState(null);
   // console.log(role);
   const {
@@ -48,6 +49,7 @@ const Register = () => {
             if (res.data.insertedId) {
               console.log("user added");
               toast.success("Signed up successful");
+              navigate("/")
             }
           });
         });
@@ -98,7 +100,7 @@ const Register = () => {
 
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="w-full mt-4 flex flex-col gap-5"
+            className="w-full mt-6 flex flex-col gap-5"
           >
             <div className="relative">
               <label
@@ -159,11 +161,12 @@ const Register = () => {
             </div>
 
             <div className="mt-3">
-              <input
-                type="submit"
-                value="Register"
-                className="h-11 rounded-md w-96 text-xl hover:text-[#f5816a] hover:bg-transparent hover:border-2 hover:border-[#f5816a]   text-white bg-[#f5816a]  cursor-pointer"
-              />
+             <button
+             disabled={loading}
+              type="submit"
+                className="h-11 rounded-md w-96 text-xl hover:text-[#f5816a] hover:bg-transparent hover:border-2 hover:border-[#f5816a]   text-white bg-[#f5816a]  cursor-pointer">
+                 {loading ? <div className="flex gap-1 items-center justify-center"><TbFidgetSpinner className="animate-spin" />Register</div> : " Register"}
+                  </button>
             </div>
           </form>
 
@@ -205,15 +208,18 @@ const Register = () => {
               <span className="font-semibold text-xl">Google</span>
             </button>
           </div>
-          <span className="block text-center">
+          <span className="block text-sm mt-4 text-center">
                         Already have an account?{" "}
                         <button
           
                           className="text-blue-500 cursor-pointer"
                         >
-                         <Link to='/login'> Login</Link>
+                         <Link to='/login' className="hover:underline"> Login</Link>
                         </button>
                       </span>
+                      <div className="flex items-center justify-center text-red-600  mt-2">
+                        <Link className="flex hover:text-orange-500 items-center gap-1" to='/'> <MdKeyboardBackspace className="text-xl font-bold" /> Back</Link>
+                      </div>
         </div>
       </div>
     </div>

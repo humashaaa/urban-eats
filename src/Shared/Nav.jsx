@@ -12,6 +12,7 @@ import { IoMdClose } from "react-icons/io";
 import useAuth from "../Hooks/useAuth";
 import NavModal from "./NavModal";
 import useCart from "../Hooks/useCart";
+import { IoPersonCircleOutline, IoPersonOutline } from "react-icons/io5";
 const Nav = () => {
   let [isOpen, setIsOpen] = useState(false);
   let [is2ndOpen, setIs2ndOpen] = useState(false);
@@ -36,6 +37,11 @@ const Nav = () => {
   const handleLogin = () => {
     setIsOpen(true);
     setIs2ndOpen(false);
+  };
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -76,9 +82,50 @@ const Nav = () => {
         </div>
         <div className="navbar-end space-x-3">
           {user ? (
-            <>
-              <NavModal></NavModal>
-            </>
+            <div className="dropdown dropdown-end">
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-11 rounded-full">
+                  {user.photoURL ? (
+                    <img
+                      src={user.photoURL}
+                      alt="User"
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <IoPersonOutline className="w-full  h-full border-4 text-white  rounded-full " />
+                  )}
+                </div>
+              </label>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm text-black  dropdown-content mt-3 z-[50] p-2 shadow bg-blue-50 rounded-box md:w-52 w-20"
+              >
+                <li>
+                  <button className="btn btn-sm font-extrabold mb-1  btn-ghost">
+                    {user.displayName || "user"}
+                  </button>
+                </li>
+                <li>
+                  <NavLink className="font-semibold" to="/dashboard">
+                    Dashboard
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className="font-semibold mb-3" to="/myProfile">
+                    Profile
+                  </NavLink>
+                </li>
+
+                <li>
+                  <button
+                    onClick={handleLogOut}
+                    className="btn btn-sm hover:bg-blue-500  bg-blue-400 text-white"
+                  >
+                    Log out
+                  </button>
+                </li>
+              </ul>
+            </div>
           ) : (
             <>
               <Link to="/login">
@@ -86,41 +133,6 @@ const Nav = () => {
                   Login
                 </button>
               </Link>
-             
-
-              <Dialog
-                open={is2ndOpen}
-                onClose={() => setIs2ndOpen(false)}
-                className="relative z-50"
-              >
-                <div className="fixed inset-0  w-screen  overflow-y-auto p-4">
-                  <div className="flex min-h-full items-center justify-center">
-                    <DialogPanel className="max-w-3xl space-y-4 border bg-white p-12">
-                      {/* Close Icon */}
-                      <button
-                        onClick={() => setIs2ndOpen(false)}
-                        className="absolute top-9 right-[546px] bg-gray-100  text-gray-500 hover:text-white hover:bg-black hover:bg-opacity-50 p-1 rounded-full transition duration-300 "
-                      >
-                        <IoMdClose className="text-2xl " />
-                      </button>
-
-                      <Register
-                        isOpen={is2ndOpen}
-                        setIsOpen={setIs2ndOpen}
-                      ></Register>
-                      <span className="block text-center">
-                        Already have an account?{" "}
-                        <button
-                          onClick={handleLogin}
-                          className="text-blue-500 cursor-pointer"
-                        >
-                          Login
-                        </button>
-                      </span>
-                    </DialogPanel>
-                  </div>
-                </div>
-              </Dialog>
 
               <button className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-[#E2725B] border border-[#E2725B] rounded-md shadow-sm hover:[#ec6d53]focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ec6d53]">
                 Book A Table
